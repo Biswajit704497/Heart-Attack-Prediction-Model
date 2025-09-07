@@ -17,7 +17,7 @@
             <div class="content-box1">
                 <h1>EXAMINING YOUR HEARTS</h1>
                 <p>The goal of this project is to train a machine learnig model to acurate predict</p>
-                <p>Whether a sample patient has been diagonsed with heart disease, with accuracy possible.</p>
+                <p>Whether a sample patient has been diagonsed with heart attack, with accuracy possible.</p>
 
                 <div>
                     <button >CHECK YOUR HEART</button>
@@ -29,11 +29,11 @@
             <h1>HEART'S DATA</h1>
             <p>input your data</p>
             <form action="/", method="post">
-                <input type="number" name="age" id="" placeholder="age">
-                <input type="number" name="exercise" id="" placeholder="exercise minutes per week">
-                <input type="number" name="bmi" id="" placeholder="bmi">
-                <input type="number" name="bp" id="" placeholder="systolic bp">
-                <input type="number" name="cholesterol" id="" placeholder="cholesterol total">
+                <input type="number" name="age" id="" placeholder="age=18-100">
+                <input type="number" name="exercise" id="" placeholder="exercise minutes per week=0-300">
+                <input type="number" name="bmi" id="" placeholder="bmi=10-50">
+                <input type="number" name="bp" id="" placeholder="systolic bp=80-200">
+                <input type="number" name="cholesterol" id="" placeholder="cholesterol total=100-400">
                 <input  value="Predict" type="submit">
 
                 <label for="">Parsantage of heart Attack: {{pre}}</label>
