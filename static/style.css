@@ -111,7 +111,7 @@ main {
     font-size: 1rem;
 }
 
-.box2 form input[type="button"] {
+.box2 form input[type="submit"] {
     background-color: #1e90ff;
     color: #fff;
     border: none;
@@ -119,6 +119,6 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.box2 form input[type="button"]:hover {
+.box2 form input[type="submit"]:hover {
     background-color: #0073e6;
 }
