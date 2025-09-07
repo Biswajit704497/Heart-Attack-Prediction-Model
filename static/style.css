@@ -1,4 +1,4 @@
-/* Updated CSS for a modern UI */
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,24 +10,28 @@ body {
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
+    font-size: 16px;
 }
 
 header {
-    background-color: #1e1e2f;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c44);
     color: #fff;
     font-size: 1.2rem;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
+/* Hero Section */
 .box1 {
     background-image: url("https://dvl2h13awlxkt.cloudfront.net/assets/general-images/Knowledge/_1200x630_crop_center-center_82_none/Coronary-heart-disease.jpg?mtime=1657262027");
-    height: 400px;
+    min-height: 300px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,28 +39,40 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    padding: 20px;
+}
+
+.box1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .box1 h1 {
     color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 2.8rem;
+    z-index: 1;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
+/* Content inside hero */
 .content-box1 {
+    position: relative;
+    z-index: 1;
     font-size: 1.2rem;
     font-weight: 500;
     color: #f8f8f8;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.5px;
     line-height: 1.6;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
     border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .content-box1 h1 {
@@ -64,32 +80,39 @@ main {
 }
 
 .content-box1 button {
-    background-color: #ff4757;
+    background: linear-gradient(135deg, #ff4757, #e84118);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    margin: 10px 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .content-box1 button:hover {
-    background-color: #e84118;
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #e84118, #c23616);
 }
 
+/* Prediction Form */
 .box2 {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 30px;
+    padding: 25px;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.box2:hover {
+    transform: translateY(-3px);
 }
 
 .box2 h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #1e1e2f;
 }
 
@@ -101,24 +124,85 @@ main {
 .box2 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .box2 form input {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.box2 form input:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
 }
 
 .box2 form input[type="submit"] {
-    background-color: #1e90ff;
+    background: linear-gradient(135deg, #1e90ff, #0073e6);
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .box2 form input[type="submit"]:hover {
-    background-color: #0073e6;
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    transform: translateY(-2px);
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+    .box1 h1 {
+        font-size: 2rem;
+    }
+
+    .content-box1 {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .box2 {
+        padding: 20px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    header {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .box1 {
+        min-height: 220px;
+        padding: 10px;
+    }
+
+    .box1 h1 {
+        font-size: 1.5rem;
+    }
+
+    .content-box1 {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .content-box1 button {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .box2 h1 {
+        font-size: 1.5rem;
+    }
+
+    .box2 {
+        padding: 15px;
+    }
 }
