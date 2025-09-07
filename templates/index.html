@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Attack Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <header>
-        <h1>ML FOR HEART DISEASE</h1>
+        <h1>ML FOR HEART ATTACK PREDICTION</h1>
     </header>
     <main>
-         <div class="box1">
-            <h1>EXAMINING YOUR HEARTS</h1>
-            <p>The goal of this project is to train a machine learnig model to acurate predict</p>
-            <p>Whether a sample patient has been diagonsed with Heart</p>
-       </div>
-       <div class="box2">
+        <div class="box1">
+            <div class="content-box1">
+                <h1>EXAMINING YOUR HEARTS</h1>
+                <p>The goal of this project is to train a machine learnig model to acurate predict</p>
+                <p>Whether a sample patient has been diagonsed with heart disease, with accuracy possible.</p>
 
-       </div>
+                <div>
+                    <button>CHECK YOUR HEART</button>
+                    <button>KNOW MORE</button>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <h1>HEART'S DATA</h1>
+            <p>input your data</p>
+            <form action="/", method="post">
+                <input type="number" name="age" id="" placeholder="age">
+                <input type="number" name="exercise" id="" placeholder="exercise minutes per week">
+                <input type="number" name="bmi" id="" placeholder="bmi">
+                <input type="number" name="bp" id="" placeholder="systolic bp">
+                <input type="number" name="cholesterol" id="" placeholder="cholesterol total">
+                <input  value="Predict" type="submit">
+
+                <label for="">Parsantage of heart Attack: {{pre}}</label>
+            </form>
+        </div>
     </main>
 </body>
+
 </html>

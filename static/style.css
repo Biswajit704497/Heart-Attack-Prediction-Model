@@ -1,23 +1,124 @@
-*{
+/* Updated CSS for a modern UI */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
-header{
-    background-color: black;
-    color: white;
-    font-size: 0.8rem;
-    padding: 15px 20px;
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
-main .box1{
+
+header {
+    background-color: #1e1e2f;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 20px;
+}
+
+.box1 {
     background-image: url("https://dvl2h13awlxkt.cloudfront.net/assets/general-images/Knowledge/_1200x630_crop_center-center_82_none/Coronary-heart-disease.jpg?mtime=1657262027");
     height: 400px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.box1 h1{
-    color: white;
+
+.box1 h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content-box1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f8f8f8;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.content-box1 h1 {
+    margin-bottom: 15px;
+}
+
+.content-box1 button {
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.content-box1 button:hover {
+    background-color: #e84118;
+}
+
+.box2 {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box2 h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1e1e2f;
+}
+
+.box2 p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.box2 form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box2 form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.box2 form input[type="button"] {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box2 form input[type="button"]:hover {
+    background-color: #0073e6;
 }
