@@ -1,5 +1,6 @@
 from flask import Flask,render_template, request
 import joblib
+import os
 model = joblib.load('polynomial_regression_model.joblib')
 
 def heart_predict(demo):
@@ -25,4 +26,6 @@ def home():
     return render_template("index.html", pre = pre)
 
 
-app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Render sets PORT env var
+    app.run(host="0.0.0.0", port=port, debug=True)
