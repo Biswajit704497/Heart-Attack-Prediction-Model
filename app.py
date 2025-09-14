@@ -8,9 +8,13 @@ def heart_predict(demo):
     return prediction
 
 app = Flask(__name__)
-
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def home():
+    return render_template("home.html")
+
+
+@app.route("/heart_attack", methods=['GET', 'POST'])
+def heart_attack():
 
     pre = None  # Initialize pre with a default value
 
