@@ -1,0 +1,364 @@
+/* Health App Custom Styles */
+
+/* CSS Variables for Health Theme */
+:root {
+    --health-primary: #3b82f6;
+    --health-secondary: #10b981;
+    --health-accent: #06b6d4;
+    --health-warning: #f59e0b;
+    --health-danger: #ef4444;
+    --health-success: #10b981;
+    
+    --gradient-primary: linear-gradient(135deg, #3b82f6, #06b6d4);
+    --gradient-secondary: linear-gradient(135deg, #10b981, #34d399);
+    --gradient-hero: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
+    
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-primary: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 76px; /* Account for fixed navbar */
+}
+
+/* Health Brand Styling */
+.health-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--health-primary);
+    text-decoration: none;
+}
+
+.health-brand:hover {
+    color: var(--health-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #3b82f6;
+    background: var(--gradient-hero) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 4rem;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-icon-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-icon-2 {
+    top: 40%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.floating-icon-3 {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-gradient-text {
+    background: linear-gradient(45deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.btn-hero {
+    background: white;
+    color: var(--health-primary);
+    border: none;
+    font-weight: 600;
+    box-shadow: var(--shadow-primary);
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: #f8fafc;
+    color: var(--health-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary), var(--shadow-card-hover);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-delay {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.fade-in-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Service Cards */
+.service-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.service-card:hover h5 {
+    color: var(--health-primary);
+}
+
+.service-icon {
+    width: clamp(40px, 8vw, 64px);
+    height: clamp(40px, 8vw, 64px);
+    min-width: clamp(40px, 8vw, 64px);
+    min-height: clamp(40px, 8vw, 64px);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    color: white;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* How It Works Cards */
+.how-it-works-card {
+    padding: 2rem 1rem;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bg-gradient-primary {
+    background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-secondary {
+    background: var(--gradient-secondary) !important;
+}
+
+/* Stat Cards */
+.stat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.stat-card i {
+    font-size: 1.5rem;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    height: 100%;
+}
+
+.testimonial-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #64748b;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--health-primary);
+}
+
+/* Form Styles */
+.health-form {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    margin: 2rem 0;
+}
+
+.form-control:focus {
+    border-color: var(--health-primary);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--gradient-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-card-hover);
+    filter: brightness(1.05);
+}
+
+/* Results Card */
+.results-card {
+    background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.result-value {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+.result-value .display-4 {
+    color: var(--health-primary);
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .floating-icon {
+        font-size: 2rem;
+    }
+    
+    .service-card .card-body {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .service-icon {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Utility Classes */
+.text-health-primary { color: var(--health-primary) !important; }
+.text-health-secondary { color: var(--health-secondary) !important; }
+.text-health-success { color: var(--health-success) !important; }
+.text-health-warning { color: var(--health-warning) !important; }
+.text-health-danger { color: var(--health-danger) !important; }
+
+.bg-health-primary { background-color: var(--health-primary) !important; }
+.bg-health-secondary { background-color: var(--health-secondary) !important; }
+.bg-health-success { background-color: var(--health-success) !important; }
+.bg-health-warning { background-color: var(--health-warning) !important; }
+.bg-health-danger { background-color: var(--health-danger) !important; }
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--health-primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
