@@ -29,6 +29,20 @@ def heart_attack():
 
     return render_template("index.html", pre = pre)
 
+@app.route("/BMI", methods=['GET','POST'])
+def BMI():
+    bmi = None
+    if request.method == 'POST':
+        weight = int(request.form.get('weight'))
+        height =int(request.form.get('height'))
+
+        height_m = height / 100
+        bmi = weight /(height_m ** 2)
+        bmi = round(bmi)
+        # print(weight, height)
+
+    return render_template('BMI.html', bmi = bmi)
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render sets PORT env var
