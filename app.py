@@ -1,11 +1,7 @@
 from flask import Flask,render_template, request
 import joblib
 import os
-model = joblib.load('polynomial_regression_model.joblib')
 
-def heart_predict(demo):
-    prediction = model.predict([demo])
-    return prediction
 
 app = Flask(__name__)
 @app.route("/")
@@ -24,10 +20,10 @@ def heart_attack():
         bmi = float(request.form.get('bmi',0))
         bp = float(request.form.get('bp',0))
         cholesterol = float(request.form.get('cholesterol',0))
-        print(age, exercise, bmi, bp,cholesterol)
-        pre = heart_predict([age,exercise,bmi,bp,cholesterol])
+        # print(age, exercise, bmi, bp,cholesterol)
+       
 
-    return render_template("index.html", pre = pre)
+    return render_template("heart.html",)
 
 
 @app.route("/BMI", methods=['GET','POST'])
