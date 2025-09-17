@@ -32,16 +32,28 @@ def heart_attack():
 @app.route("/BMI", methods=['GET','POST'])
 def BMI():
     bmi = None
+    category=''
     if request.method == 'POST':
         weight = int(request.form.get('weight'))
         height =int(request.form.get('height'))
 
         height_m = height / 100
         bmi = weight /(height_m ** 2)
-        bmi = round(bmi)
+        bmi = round(bmi,2)
         # print(weight, height)
+        
+        if bmi < 18.5:
+             category = "Underweight"
+        elif 18.5 <= bmi < 25:
+            category = "Normal weight"
+        elif 25 <= bmi < 30:
+            category = "Overweight"
+        else:
+            category = "Obese"
+    
+    
 
-    return render_template('BMI.html', bmi = bmi)
+    return render_template('BMI.html', bmi = bmi , category = category)
 
 
 if __name__ == "__main__":
