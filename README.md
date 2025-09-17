@@ -20,4 +20,13 @@ A simple health prediction web application built with **Flask**. Quick Lab provi
 
 ---
 
-## 📂 Project Structure
+## 📊 Example Screenshots
+
+
+![Home Page](static/images/web1.png)
+
+### ❤️ All Health Prediction
+![Service](static/images/web2.png)
+
+
+
