@@ -29,6 +29,7 @@ def heart_attack():
 
     return render_template("index.html", pre = pre)
 
+
 @app.route("/BMI", methods=['GET','POST'])
 def BMI():
     bmi = None
@@ -51,11 +52,10 @@ def BMI():
         else:
             category = "Obese"
     
-    
-
     return render_template('BMI.html', bmi = bmi , category = category)
 
 
+# main 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render sets PORT env var
     app.run(host="0.0.0.0", port=port, debug=True)
