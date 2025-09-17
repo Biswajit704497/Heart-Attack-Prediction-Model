@@ -29,11 +29,35 @@
             <h1>HEART'S DATA</h1>
             <p>input your data</p>
             <form action="/heart_attack", method="post">
-                <input type="number" name="age" id="" placeholder="age=18-100">
-                <input type="number" name="exercise" id="" placeholder="exercise minutes per week=0-300">
-                <input type="number" name="bmi" id="" placeholder="bmi=10-50">
-                <input type="number" name="bp" id="" placeholder="systolic bp=80-200">
-                <input type="number" name="cholesterol" id="" placeholder="cholesterol total=100-400">
+                <div class="input-box">
+                    <label for="">Age</label>
+                    <input type="number" name="age" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Gender</label>
+                    <select name="gender" id="">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                 <div class="input-box">
+                    <label for="">Heart Rate</label>
+                    <input type="number" name="hearRate" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Systolic Blood Pressure</label>
+                    <input type="number" name="sbloodPressure" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Diastolic Blood Pressure</label>
+                    <input type="number" name="dbloodPressure" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Blood Sugar</label>
+                    <input type="number" name="bloodSugar" id="" placeholder="">
+                </div>
+
+               
                 <input  value="Predict" type="submit">
 
                 <label for="">Parsantage of heart Attack: {{pre}}</label>
