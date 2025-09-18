@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('home') }}"><button>Back</button></a>
+        
+    </header>
+    <main>
+       
+        <div class="box2">
+            <h1>HEART'S DATA</h1>
+            <p>input your data</p>
+            <form action="/heart_attack", method="post">
+                <div class="input-box">
+                    <label for="">Age</label>
+                    <input type="number" name="age" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Gender</label>
+                    <select name="gender" id="">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                 <div class="input-box">
+                    <label for="">Heart Rate</label>
+                    <input type="number" name="hearRate" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Systolic Blood Pressure</label>
+                    <input type="number" name="sbloodPressure" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Diastolic Blood Pressure</label>
+                    <input type="number" name="dbloodPressure" id="" placeholder="">
+                </div>
+                 <div class="input-box">
+                    <label for="">Blood Sugar</label>
+                    <input type="number" name="bloodSugar" id="" placeholder="">
+                </div>
+
+               
+                <input  value="Predict" type="submit">
+
+                <label for="">Parsantage of heart Attack: {{pre}}</label>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

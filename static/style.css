@@ -7,19 +7,45 @@
 }
 
 body {
-    background-color: #f4f4f9;
+    background-color: #f3f4f6; /* soft gray to match BMI */
     color: #333;
     line-height: 1.6;
     font-size: 16px;
 }
 
 header {
-    background: linear-gradient(135deg, #1e1e2f, #2c2c44);
-    color: #fff;
+    /* position: sticky; */
+    top: 0;
+    background: transparent;
+    color: #1e88e5;
     font-size: 1.2rem;
-    padding: 20px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header h1 {
+    margin: 0 auto;
+    color: #1e88e5;
+    font-weight: 700;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+header button {
+    background: #e3f2fd;
+    color: #1e88e5;
+    border: 1px solid rgba(30, 136, 229, 0.3);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+header button:hover {
+    background: #d1ecff;
+    box-shadow: 0 6px 14px rgba(30, 136, 229, 0.2);
 }
 
 main {
@@ -99,11 +125,16 @@ main {
 /* Prediction Form */
 .box2 {
     margin-top: 30px;
-    padding: 25px;
+    padding: 28px 24px;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 6px 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(30, 136, 229, 0.12);
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .box2:hover {
@@ -111,48 +142,59 @@ main {
 }
 
 .box2 h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #1e1e2f;
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    color: #1e88e5;
+    text-align: center;
+    font-weight: 700;
 }
 
 .box2 p {
     margin-bottom: 15px;
-    color: #555;
+    color: #2e7d32; /* green accent */
+    text-align: center;
+    font-weight: 600;
 }
 
 .box2 form {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-top: 12px;
 }
 
-.box2 form input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+.box2 form input,
+.box2 form select {
+    padding: 12px 14px;
+    border: 1px solid #c7d2fe; /* light blue */
+    border-radius: 10px;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
+    background-color: #fff;
 }
 
-.box2 form input:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+.box2 form input:focus,
+.box2 form select:focus {
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.15);
 }
 
 .box2 form input[type="submit"] {
-    background: linear-gradient(135deg, #1e90ff, #0073e6);
+    background: linear-gradient(135deg, #1e88e5 0%, #2e7d32 100%);
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
+    transition: all 0.2s ease;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 18px rgba(30, 136, 229, 0.25);
 }
 
 .box2 form input[type="submit"]:hover {
-    background: linear-gradient(135deg, #0073e6, #005bb5);
+    filter: brightness(1.03);
     transform: translateY(-2px);
 }
 
@@ -168,7 +210,7 @@ main {
     }
 
     .box2 {
-        padding: 20px;
+        padding: 22px 18px;
     }
 }
 
@@ -176,7 +218,7 @@ main {
 @media (max-width: 480px) {
     header {
         font-size: 1rem;
-        padding: 15px;
+        padding: 12px;
     }
 
     .box1 {
@@ -203,6 +245,29 @@ main {
     }
 
     .box2 {
-        padding: 15px;
+        padding: 20px 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Larger back button on mobile */
+    header button {
+        padding: 12px 20px;
+        font-size: 16px;
+        min-height: 48px;
+        border-radius: 12px;
+    }
+
+    /* Prevent iOS input zoom */
+    .box2 form input,
+    .box2 form select {
+        font-size: 16px;
+        padding: 14px 16px;
+    }
+
+    .box2 form input[type="submit"] {
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
     }
 }
