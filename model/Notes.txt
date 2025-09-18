@@ -1,0 +1,8 @@
+Diet : 
+    0 -> Average
+    1 -> Unhealthy
+    2 -> Healthy
+
+Sex :
+    0 -> Female
+    1 -> Male
