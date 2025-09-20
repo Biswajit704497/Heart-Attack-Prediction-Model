@@ -1,6 +1,6 @@
 from flask import Flask,render_template, request
-import joblib
 import os
+from bmi_calculate import BMI
 
 
 app = Flask(__name__)
@@ -33,22 +33,11 @@ def BMI():
     if request.method == 'POST':
         weight = int(request.form.get('weight'))
         height =int(request.form.get('height'))
+        person_bmi = BMI(height, weight)
 
-        height_m = height / 100
-        bmi = weight /(height_m ** 2)
-        bmi = round(bmi,2)
-        # print(weight, height)
         
-        if bmi < 18.5:
-             category = "Underweight"
-        elif 18.5 <= bmi < 25:
-            category = "Normal weight"
-        elif 25 <= bmi < 30:
-            category = "Overweight"
-        else:
-            category = "Obese"
     
-    return render_template('BMI.html', bmi = bmi , category = category)
+    return render_template('BMI.html', person_bmi = person_bmi)
 
 
 # main 
