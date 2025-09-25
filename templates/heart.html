@@ -21,90 +21,120 @@
             <form action="/heart_attack", method="post">
                 <div class="input-box">
                     <label for="">Age</label>
-                    <input type="number" name="age" id="" placeholder="">
+                    <input type="number" name="age" id="" placeholder="" required>
                 </div>
                  <div class="input-box">
                     <label for="">Gender</label>
-                    <select name="gender" id="">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                    <select name="gender" id="" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
                     </select>
                 </div>
                  <div class="input-box">
                     <label for="">Cholesterol</label>
-                    <input type="number" name="cholesterol" id="" placeholder="">
+                    <input type="number" name="cholesterol" id="" placeholder="" required>
                 </div>
                  <div class="input-box">
                     <label for="">High Blood Pressure</label>
-                    <input type="number" name="highBloodPressure" id="" placeholder="">
+                    <input type="number" name="highBloodPressure" id="" placeholder="" required>
                 </div>
                  <div class="input-box">
                     <label for="">Low Blood Pressure</label>
-                    <input type="number" name="lowBloodPressure" id="" placeholder="">
+                    <input type="number" name="lowBloodPressure" id="" placeholder="" required>
                 </div>
                  <div class="input-box">
                     <label for="">Heart Rate</label>
-                    <input type="number" name="heartRate" id="" placeholder="">
+                    <input type="number" name="heartRate" id="" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <label for="">Diabetes</label>
-                    <input type="number" name="diabetes" id="" placeholder="">
+                     <select name="diabetes" id="" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
                 <div class="input-box">
                     <label for="">Family History</label>
-                    <input type="number" name="familyHistory" id="" placeholder="">
+                    <select name="familyHistory" id="" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
                 <div class="input-box">
                     <label for="">Smoking</label>
-                    <input type="number" name="smoking" id="" placeholder="">
+                    <select name="smoking" id="" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
                  <div class="input-box">
                     <label for="">Alcohol Consumption</label>
-                    <input type="number" name="alcoholConsumption" id="" placeholder="">
+                    <select name="alcoholConsumption" id="" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
                 <div class="input-box">
                     <label for="">Exercise Hours Per Week</label>
-                    <input type="number" name="exerciseHours" id="" placeholder="">
+                    <input type="number" name="exerciseHours" id="" placeholder="" required>
                 </div>
 
                 <div class="input-box">
                     <label for="">Diet</label>
-                    <input type="number" name="diet" id="" placeholder="">
+                    <select name="diet" required>
+                        <option value="0">Average</option>
+                        <option value="1">Unhealthy</option>
+                        <option value="2">Healthy</option>
+                    </select>
                 </div>
 
                 <div class="input-box">
                     <label for="">Previous Heart Problems</label>
-                    <input type="number" name="previousHeartProblems" id="" placeholder="">
+                     <select name="previousHeartProblems" id="" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
 
                 <div class="input-box">
                     <label for="">Medication Use</label>
-                    <input type="number" name="medicationUse" id="" placeholder="">
+                     <select name="medicationUse" id="" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
 
                 <div class="input-box">
                     <label for="">Stress Level</label>
-                    <input type="number" name="stressLevel" id="" placeholder="">
+                    <input type="number" name="stressLevel" id="" placeholder="" required>
                 </div>
 
                 <div class="input-box">
                     <label for="">BMI</label>
-                    <input type="number" name="bmi" id="" placeholder="">
+                    <input type="number" name="bmi" id="" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <label for="">Physical Activity Days Per Week</label>
-                    <input type="number" name="physicalActivityDays" id="" placeholder="">
+                    <input type="number" name="physicalActivityDays" id="" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <label for="">Sleep Hours Per Day</label>
-                    <input type="number" name="sleepHours" id="" placeholder="">
+                    <input type="number" name="sleepHours" id="" placeholder="" required>
                 </div>
 
 
                
                 <input  value="Predict" type="submit">
 
-                <label for="">Parsantage of heart Attack: {{pre}}</label>
+                <label for="">Chance of heart Attack: 
+                    {% if result == 1 %}
+                        High
+                    {% elif result == 0 %}
+                        Low
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </label>
             </form>
         </div>
     </main>

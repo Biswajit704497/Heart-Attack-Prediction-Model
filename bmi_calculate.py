@@ -1,4 +1,4 @@
-def BMI(height, weight):
+def BMI_def(height, weight):
     bmi_list = []
     height_m = height / 100
     bmi = weight /(height_m ** 2)
@@ -18,5 +18,5 @@ def BMI(height, weight):
 
     return bmi_list
 
-if __name__== '__main__':
-    print(BMI(150,40))
+# if __name__== '__main__':
+#     print(BMI(150,40))
