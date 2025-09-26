@@ -8,8 +8,9 @@ A simple health prediction web application built with **Flask**. Quick Lab provi
 
 - ✅ **Heart Attack Prediction** – Predicts the likelihood of heart attack risk based on user input (age, gender, blood pressure, cholesterol, etc.).  
 
-- ✅ **User-Friendly Web Interface** – Clean and simple design for quick results.  
-
+- ✅ **User-Friendly Web Interface** – Clean and simple design for quick results.
+- 
+- Live Link - https://heart-attack-prediction-model.onrender.com/#home
 ---
 
 ## 🛠️ Tech Stack
